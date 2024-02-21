@@ -1,0 +1,9 @@
+h1.home-title{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+}
+
+p.home-text{
+    text-align: center;
+    font-size: 20px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Group Calendar Scheduling</title>
+</head>
+<body>
+    <!--var authorized will allow this page to be seen if true-->
+    <h1> Admin must be logged in to view this page first</h1>
+        <p>Authorized users can view the available appts and add appts</p>
+    <div class="calendar" id="calendar"></div>
+  <form id="addAppointmentForm">
+    <fieldset>
+        <label for="customerName">Customer Name</label>
+        <input type="name" id="customerName" required><br><br>
+        <label for="appointmentDate">Appointment Date:</label>
+        <input type="date" id="appointmentDate" required><br><br>
+        <label for="appointmentTime">Appointment Time:</label>
+        <input type="time" id="appointmentTime" required><br><br>
+        <label for="appointmentDescription">Appointment Description:</label>
+        <input type="text" id="appointmentDescription" required><br><br>
+        <button type="submit">Add Appointment</button>
+    </fieldset>
+  </form>
+
+    <h3>Calendar with Appointments goes here!</h3>
+    
+</body>
+</html>

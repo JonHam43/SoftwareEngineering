@@ -1,0 +1,85 @@
+/* CSS StyleSheet Template */
+
+body {
+    background-image: url("istockphoto-1368038266-612x612.jpg");
+    font-family: Arial, sans-serif;
+    background-color: #CCCCCC;
+    color: #0F292F;
+}
+
+h1, h2, h3 {
+    color: #501F3A;
+}
+
+p {
+    color: #0F292F;
+}
+
+a {
+    color: #CB2D6F;
+}
+
+a:hover {
+    color: #14A098;
+}
+
+.button {
+    background-color: #CB2D6F;
+    color: #CCCCCC;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #501F3A;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width:400px;
+    /*Border*/
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: inset -5px -5px rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.form h1{
+    color:white;
+    font-size: 2rem; 
+    border-bottom: 4px solid rgba(255,255,255,.5);
+    margin: 50px;
+}
+
+.box{
+    margin: 20px;
+    padding: 12px;
+    width: 65%;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: inset -3px -3px rgba(0,0,0,.5);
+    color:white;
+    font-size: 1rem;
+}
+
+#submit{
+    padding: 10px 20px;
+    margin-top: 50px;
+    width: 50%;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: inset -3px -3px rgba(0,0,0,.5);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+

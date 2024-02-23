@@ -36,6 +36,7 @@ a:hover {
     background-color: #501F3A;
 }
 
+/*Glassy Form*/
 .form{
     display: flex;
     flex-direction: column;

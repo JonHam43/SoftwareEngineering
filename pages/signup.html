@@ -16,24 +16,67 @@
                 height: 2px;
             }
 
+            form
+            {
+                margin: 0px 35px;
+            }
+
+            input
+            {
+                width: 160px;
+            }
+
             button
             {
-                margin: 0% 5% 0% 5%;
+                margin: 30px 20px;
+            }
+
+            .btn
+            {
+                width: 90px;
+            }
+
+            .btnCenter
+            {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
             }
 
             .sideBySide
             {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-evenly;
+                justify-content: center;
                 margin: auto;
             }
 
-            .clearfix::after 
+            @media screen and (max-width: 275px)
             {
-                content: "";
-                clear: both;
-                display: table;
+                form
+                {
+                    margin: auto;
+                }
+
+                input
+                {
+                    width: auto;
+                }
+
+                .btnCenter
+                {
+                    flex-direction: column-reverse;
+                }
+            }
+
+            @media screen and (max-width: 163px)
+            {
+                .noBreak
+                {
+                    display: none;
+                }
             }
         </style>
     </head>
@@ -44,48 +87,41 @@
         <div class="sideBySide">
             <form action="signup.html" method="get">
                 <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br><br>
-                <input type="submit" value="Submit">
+                <input type="text" placeholder="Enter First and Last Name" id="name" name="name" value=""><br><br class="noBreak">
             </form>
             <br>
             <form action="signup.html" method="get">
                 <label for="email">Email:</label><br>
-                <input type="text" id="email" name="email"><br><br>
-                <input type="submit" value="Submit">
+                <input type="email" placeholder="Enter Email" id="email" name="email" value=""><br>
             </form>
         </div>
-        <br><br>
+        <br>
         <div class="sideBySide">
             <form action="signup.html" method="get">
                 <label for="phone">Phone Number:</label><br>
-                <input type="text" id="phone" name="phone"><br><br>
-                <input type="submit" value="Submit">
+                <input type="tel" placeholder="Enter Phone Number" id="phone" name="phone" value=""><br><br class="noBreak">
             </form>
             <br>
             <form action="signup.html" method="get">
                 <label for="addr">Address:</label><br>
-                <input type="text" id="addr" name="addr"><br><br>
-                <input type="submit" value="Submit">
+                <input type="text" placeholder="Enter Address" id="addr" name="addr" value=""><br>
             </form>
         </div>
-        <br><br>
+        <br>
         <div class="sideBySide">
             <form action="signup.html" method="get">
                 <label for="userID">Username:</label><br>
-                <input type="text" id="userID" name="userID"><br><br>
-                <input type="submit" value="Submit">
+                <input type="text" placeholder="Enter Username" id="userID" name="userID" value=""><br><br class="noBreak">
             </form>
             <br>
             <form action="signup.html" method="get">
                 <label for="passwd">Password:</label><br>
-                <input type="text" id="passwd" name="passwd"><br><br>
-                <input type="submit" value="Submit">
+                <input type="password" placeholder="Enter Password" id="passwd" name="passwd" value=""><br><br>
             </form>
         </div>
-        <br><br>
-        <div class="clearfix" style="text-align: center">
-            <button type="button">Cancel</button>
-            <button type="submit">Sign up</button>
+        <div class="btnCenter">
+            <button type="button" class="btn">Cancel</button>
+            <button type="submit" class="btn">Sign up</button>
         </div>
     </body>
 </html>

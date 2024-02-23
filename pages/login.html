@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"> <!-- Link to the CSS stylesheet -->
+    <link rel = "stylesheet" href ="/css/master.css">
+    <style>
+        
+        .container {
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 100px;
+        }   
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #CCCCCC;
+            color: #0F292F;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class = "nav">
+        <a href="./index.html">Home</a>
+        <a class="active" href = "./login.html">Log in</a> 
+        <a href ="./signup.html">Sign up</a> 
+        <a href ="./groupcalendar.html">Group Calendar</a> 
+        <a href="./individual_Calender.html">Individual Calendar</a>
+        </div>
+    
+
+<div class="form">
+    <h2 style="color: #CB2D6F;">Login</h2> <!-- Apply color #501F3A -->
+    <form method="post" action="login.php">
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <input type="submit" value="Login" class="button"> <!-- Apply class "button" for styling -->
+    </form>
+</div>
+
+</body>
+</html>

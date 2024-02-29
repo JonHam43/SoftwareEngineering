@@ -3,6 +3,7 @@ html {
     height: auto;
 }
 
+/* Make this more interesting */
 h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -14,7 +15,7 @@ p{
 
 /* --------------------------- Navigation bar CSS Start ---------------------------- */
 .nav {
-    background-color: grey;
+    background-color: #687477;
     overflow: hidden;
 }
 

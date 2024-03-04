@@ -1,5 +1,6 @@
 h1.home-title{
     text-align: center;
+    color: whitesmoke;
 }
 
 p.home-text{
@@ -10,4 +11,11 @@ p.home-text{
 hr.home-line {
     background-color: black;
     height: 2px;
+}
+
+body{
+    background-image: url("/img/salon_1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

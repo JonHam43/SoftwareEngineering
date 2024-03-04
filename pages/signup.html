@@ -1,146 +1,110 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Sign Up Page</title>
-        <link rel = "stylesheet" href ="/css/master.css">
-        <link rel = "stylesheet" href ="/css/styles.css">
-        <style>
-            h1, p
-            {
-                text-align: center;
-            }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign Up Page</title>
+<link rel="stylesheet" href="/css/master.css">
+<link rel="stylesheet" href="/css/styles.css">
+<style>
+h1, p {
+    text-align: center;
+    color:#e2c2b3
+}
 
-            hr
-            {
-                background-color: black;
-                height: 2px;
-            }
+hr {
+    background-color: black;
+    height: 2px;
+}
 
-            form
-            {
-                margin: 0px 35px;
-            }
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #40323499;
+    backdrop-filter: blur(2px);
+    box-shadow: inset -5px -5px #68747799;
+    border-radius: 25px;
+}
 
-            input
-            {
-                padding: 5px;
-            }
+form h2 {
+    color: #e2b39d;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
 
-            button
-            {
-                margin: 30px 20px;
-            }
+.form-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+}
 
-            .btn
-            {
-                width: 90px;
-            }
+input {
+    padding: 5px;
+}
 
-            .btnCenter
-            {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: center;
-                flex-direction: row;
-            }
+button {
+    margin: 30px 20px;
+    width: 90px;
+}
 
-            .sideBySide
-            {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin: auto;
-            }
+.btnCenter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
 
-            @media screen and (max-width: 275px)
-            {
-                form
-                {
-                    margin: auto;
-                }
+@media screen and (max-width: 163px) {
+    .noBreak {
+        display: none;
+    }
+}
 
-                input
-                {
-                    width: auto;
-                }
+body {
+    font-family: Arial, sans-serif;
+    color: #0F292F;
+    background-color: #e2c2b3;
+    background-image: url("./images/tools.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+</head>
+<body>
+<div class="nav">
+    <a href="./index.html">Home</a>
+    <a href="./login.html">Log in</a>
+    <a class="active" href="./signup.html">Sign up</a>
+    <a href="./groupcalendar.html">Group Calendar</a>
+    <a href="./individual_Calender.html">Individual Calendar</a>
+</div>
 
-                .btnCenter
-                {
-                    flex-direction: column-reverse;
-                }
-            }
-
-            @media screen and (max-width: 163px)
-            {
-                .noBreak
-                {
-                    display: none;
-                }
-            }
-
-            body {
-            font-family: Arial, sans-serif;
-            color: #0F292F;
-            background-color: #e2c2b3; 
-            background-image: url("./images/tools.jpg");
-            
-            /* Full height */
-            height: 100%;
-
-            /* Center and scale the image  */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        </style>
-    </head>
-    <body>
-        <div class = "nav">
-            <a href="./index.html">Home</a>
-            <a href = "./login.html">Log in</a> 
-            <a class = "active" href ="./signup.html">Sign up</a> 
-            <a href ="./groupcalendar.html">Group Calendar</a> 
-            <a href="./individual_Calender.html">Individual Calendar</a>
-        </div>
-
-        <h1>Sign Up Page</h1>
-        <p>Please  fill in the following fields to create an account.</p>
-        <hr><br><br>
-        <div class="sideBySide">
-            <form action="signup.html" method="get">
-                <input type="text" placeholder="First and Last Name" id="name" name="name" value=""><br><br class="noBreak">
-            </form>
-            <br>
-            <form action="signup.html" method="get">
-                <input type="tel" placeholder="Phone Number" id="phone" name="phone" value=""><br>
-            </form>
-        </div>
-        <br>
-        <div class="sideBySide">
-            <form action="signup.html" method="get">
-                <input type="email" placeholder="Email" id="email" name="email" value=""><br><br class="noBreak">
-            </form>
-            <br>
-            <form action="signup.html" method="get">
-                <input type="text" placeholder="Address" id="addr" name="addr" value=""><br>
-            </form>
-        </div>
-        <br>
-        <div class="sideBySide">
-            <form action="signup.html" method="get">
-                <input type="text" placeholder="Username" id="userID" name="userID" value=""><br><br class="noBreak">
-            </form>
-            <br>
-            <form action="signup.html" method="get">
-                <input type="password" placeholder="Password" id="passwd" name="passwd" value=""><br><br>
-            </form>
-        </div>
-        <div class="btnCenter">
-            <button type="button" class="btn">Cancel</button>
-            <button type="submit" class="btn">Sign up</button>
-        </div>
-    </body>
+<h1>Sign Up Page</h1>
+<p>Please fill in the following fields to create an account.</p>
+<hr><br><br>
+<form action="signup.html" method="get">
+    <h2>Sign-Up</h2>
+    <div class="form-column">
+        <input type="text" placeholder="First and Last Name" id="name" name="name" value="">
+        <input type="tel" placeholder="Phone Number" id="phone" name="phone" value="">
+        <input type="email" placeholder="Email" id="email" name="email" value="">
+        <input type="text" placeholder="Address" id="addr" name="addr" value="">
+        <input type="text" placeholder="Username" id="userID" name="userID" value="">
+        <input type="password" placeholder="Password" id="passwd" name="passwd" value="">
+    </div>
+    <div class="btnCenter">
+        <button type="button" class="btn">Cancel</button>
+        <button type="submit" class="btn">Sign up</button>
+    </div>
+</form>
+</body>
 </html>

@@ -43,9 +43,9 @@ a:hover {
     align-items: center;
     margin: auto;
     margin-top: 50px;
-    background-color: #403234;
-    opacity: .5;
-    box-shadow: inset -5px -5px #687477;
+    background-color: #40323499;
+    backdrop-filter: blur(2px);
+    box-shadow: inset -5px -5px #68747799;
     border-radius: 25px;
 }
 

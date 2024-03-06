@@ -35,18 +35,29 @@ body {
   <form id="addAppointmentForm">
     <fieldset>
         <label for="customerName">Customer Name</label>
-        <input type="name" id="customerName" required><br><br>
+        <input type="text" name ="customerName" id="customerName" required><br><br>
         <label for="appointmentDate">Appointment Date:</label>
-        <input type="date" id="appointmentDate" required><br><br>
+        <input type="date" name="appointmentDate" id="appointmentDate" required><br><br>
         <label for="appointmentTime">Appointment Time:</label>
-        <input type="time" id="appointmentTime" required><br><br>
+        <input type="time" name="appointmentTime" id="appointmentTime" required><br><br>
         <label for="appointmentDescription">Appointment Description:</label>
-        <input type="text" id="appointmentDescription" required><br><br>
+        <input type="text" name="appointmentDescription" id="appointmentDescription" required><br><br>
         <button type="submit">Add Appointment</button>
     </fieldset>
   </form>
 
     <h3>Calendar with Appointments goes here!</h3>
-    
+    <script>
+      function handleAddAppt(event)
+      {
+        
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const value = Object.fromEntries(data.entries());
+        console.log({value});
+      }
+      const form = document.querySelector('form');
+      form.addEventListener('submit', handleAddAppt);
+    </script>
 </body>
 </html>

@@ -26,6 +26,7 @@
             h1, p
             {
                 text-align: center;
+                color: #e2c2b3
             }
 
             hr
@@ -36,11 +37,15 @@
 
             form
             {
-                margin: 0px 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
             }
 
             input
             {
+                width: 425px;
                 padding: 5px;
             }
 
@@ -63,14 +68,6 @@
                 flex-direction: row;
             }
 
-            .sideBySide
-            {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin: auto;
-            }
-
             @media screen and (max-width: 275px)
             {
                 form
@@ -88,14 +85,6 @@
                     flex-direction: column-reverse;
                 }
             }
-
-            @media screen and (max-width: 163px)
-            {
-                .noBreak
-                {
-                    display: none;
-                }
-            }
         </style>
     </head>
     <body>
@@ -109,44 +98,20 @@
         <h1>Sign Up Page</h1>
         <p>Please  fill in the following fields to create an account.</p>
         <hr><br><br>
-        <div class="sideBySide">
-            <form action="signup.html" method="get">
-                <input type="text" placeholder="First Name" id="name" name="name" value=""><br><br class="noBreak">
-            </form>
-            <form action="signup.html" method="get">
-                <input type="text" placeholder="Last Name" id="name" name="name" value=""><br><br class="noBreak">
-            </form>
-        </div>
-        <br>
-        <div class="sideBySide">
-            <form action="signup.html" method="get">
-                <input type="tel" placeholder="Phone Number" id="phone" name="phone" value=""><br>
-            </form>
-            <form action="signup.html" method="get">
-                <input type="email" placeholder="Email" id="email" name="email" value=""><br><br class="noBreak">
-            </form>
-        </div>
-        <br>
-        <div class="sideBySide">
-            <form action="signup.html" method="get">
-                <input type="text" placeholder="Username" id="userID" name="userID" value=""><br><br class="noBreak">
-            </form>
-            <form action="signup.html" method="get">
-                <input type="text" placeholder="Address" id="addr" name="addr" value=""><br>
-            </form>
-        </div>
-        <br>
-        <div class="sideBySide">
-            <form action="signup.html" method="get">
-                <input type="password" placeholder="Password" id="passwd" name="passwd" value=""><br><br>
-            </form>
-            <form action="signup.html" method="get">
-                <input type="password" placeholder="Re-Enter Password" id="passwd" name="passwd" value=""><br><br>
-            </form>
-        </div>
-        <div class="btnCenter">
-            <button type="button" class="btn">Cancel</button>
-            <button type="submit" class="btn">Sign up</button>
-        </div>
+        <form action="signup.html" method="get">
+            <input type="text" placeholder="First Name" id="name" name="name" value=""><br>
+            <input type="text" placeholder="Last Name" id="name" name="name" value=""><br>
+            <input type="tel" placeholder="Phone Number" id="phone" name="phone" value=""><br>
+            <input type="text" placeholder="Address" id="addr" name="addr" value=""><br>
+            <input type="email" placeholder="Email" id="email" name="email" value=""><br>
+            <input type="text" placeholder="Username" id="userID" name="userID" value=""><br>
+            <input type="password" placeholder="Password" id="passwd" name="passwd" value=""><br>
+            <input type="password" placeholder="Re-Enter Password" id="passwd" name="passwd" value=""><br>
+
+            <div class="btnCenter">
+                <button type="button" class="btn">Cancel</button>
+                <button type="submit" class="btn">Sign up</button>
+            </div>
+        </form>
     </body>
 </html>

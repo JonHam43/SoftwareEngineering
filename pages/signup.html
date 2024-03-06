@@ -5,7 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sign Up Page</title>
         <link rel = "stylesheet" href ="/css/master.css">
+        <link rel = "stylesheet" href ="/css/styles.css">
         <style>
+            body 
+            {
+                font-family: Arial, sans-serif;
+                color: #0F292F;
+                background-color: #e2c2b3; 
+                background-image: url("/img/tools.jpg");
+                
+                /* Full height */
+                height: 100%;
+
+                /* Center and scale the image  */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            
             h1, p
             {
                 text-align: center;
@@ -89,27 +106,24 @@
             <a href ="./groupcalendar.html">Group Calendar</a> 
             <a href="./individual_Calender.html">Individual Calendar</a>
         </div>
-
         <h1>Sign Up Page</h1>
         <p>Please  fill in the following fields to create an account.</p>
         <hr><br><br>
         <div class="sideBySide">
             <form action="signup.html" method="get">
-                <input type="text" placeholder="First and Last Name" id="name" name="name" value=""><br><br class="noBreak">
+                <input type="text" placeholder="First Name" id="name" name="name" value=""><br><br class="noBreak">
             </form>
-            <br>
             <form action="signup.html" method="get">
-                <input type="tel" placeholder="Phone Number" id="phone" name="phone" value=""><br>
+                <input type="text" placeholder="Last Name" id="name" name="name" value=""><br><br class="noBreak">
             </form>
         </div>
         <br>
         <div class="sideBySide">
             <form action="signup.html" method="get">
-                <input type="email" placeholder="Email" id="email" name="email" value=""><br><br class="noBreak">
+                <input type="tel" placeholder="Phone Number" id="phone" name="phone" value=""><br>
             </form>
-            <br>
             <form action="signup.html" method="get">
-                <input type="text" placeholder="Address" id="addr" name="addr" value=""><br>
+                <input type="email" placeholder="Email" id="email" name="email" value=""><br><br class="noBreak">
             </form>
         </div>
         <br>
@@ -117,9 +131,17 @@
             <form action="signup.html" method="get">
                 <input type="text" placeholder="Username" id="userID" name="userID" value=""><br><br class="noBreak">
             </form>
-            <br>
+            <form action="signup.html" method="get">
+                <input type="text" placeholder="Address" id="addr" name="addr" value=""><br>
+            </form>
+        </div>
+        <br>
+        <div class="sideBySide">
             <form action="signup.html" method="get">
                 <input type="password" placeholder="Password" id="passwd" name="passwd" value=""><br><br>
+            </form>
+            <form action="signup.html" method="get">
+                <input type="password" placeholder="Re-Enter Password" id="passwd" name="passwd" value=""><br><br>
             </form>
         </div>
         <div class="btnCenter">

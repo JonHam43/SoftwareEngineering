@@ -1,8 +1,11 @@
-html {
-    width: auto; 
-    height: auto;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
+/* Make this more interesting */
 h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -14,8 +17,10 @@ p{
 
 /* --------------------------- Navigation bar CSS Start ---------------------------- */
 .nav {
-    background-color: grey;
+    background-color: #687477;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .nav a {

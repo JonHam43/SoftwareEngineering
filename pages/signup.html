@@ -148,7 +148,7 @@
         </div>
 
         <script>
-            document.getElementById('signup').addEventListener('sumbit', function(event)
+            document.getElementById('signup').addEventListener('submit', function(event)
             {
                 // Prevent the signup button from submitting normally to an action file
                 event.preventDefault();
@@ -166,13 +166,13 @@
                 // JSON object
                 const signupData = 
                 {
-                    fname: fname,
-                    lname: lname,
-                    phone: phone,
-                    addr: addr,
-                    email: email,
-                    userID: userID,
-                    pwd: pwd
+                    FIRST_NAME: fname,
+                    LAST_NAME: lname,
+                    PHONE_NUMBER: phone,
+                    ADDRESS: addr,
+                    EMAIL: email,
+                    USER_NAME: userID,
+                    PASSWORD: pwd
                 };
 
                 // Display JSON object in the console and can be sent to the server

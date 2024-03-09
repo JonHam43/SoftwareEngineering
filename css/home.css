@@ -1,8 +1,9 @@
 h1.home-title{
     font-family: 'Segoe UI', sans-serif;
-    font-size: 50px;
+    font-size: 60px;
     text-align: center;
     color: #403234;
+    padding-bottom: 30px;
 }
 
 p.home-text{
@@ -12,7 +13,7 @@ p.home-text{
 }
 
 body{
-    background-image: url("./img/salon_1.jpg");
+    background-image: url("/img/salon_1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,4 +32,11 @@ body{
     background-color: #40323499;
     backdrop-filter: blur(8px);
     border-radius: 25px;
+}
+
+.heading {
+    background-color: #e2c2b3;
+    margin: 0;
+    padding: 0;
+    opacity: 90%;
 }

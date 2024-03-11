@@ -1,4 +1,5 @@
-h1.home-title{
+h1.home-title
+{
     font-family: 'Segoe UI', sans-serif;
     font-size: 60px;
     text-align: center;
@@ -6,20 +7,23 @@ h1.home-title{
     padding-bottom: 30px;
 }
 
-p.home-text{
+p.home-text
+{
     text-align: center;
     font-size: 20px;
     color: #e2c2b3;
 }
 
-body{
+body
+{
     background-image: url("/img/salon_1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.body-txt{
+.body-txt
+{
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -34,7 +38,8 @@ body{
     border-radius: 25px;
 }
 
-.heading {
+.heading 
+{
     background-color: #e2c2b3;
     margin: 0;
     padding: 0;

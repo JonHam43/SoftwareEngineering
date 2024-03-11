@@ -1,4 +1,5 @@
-html, body {
+html, body 
+{
     margin: 0;
     padding: 0;
     width: 100%;
@@ -6,24 +7,28 @@ html, body {
 }
 
 /* Make this more interesting */
-h1 {
+h1 
+{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-p{
+p
+{
     font-family: Arial, Helvetica, sans-serif;
 }
 
 
 /* --------------------------- Navigation bar CSS Start ---------------------------- */
-.nav {
+.nav 
+{
     background-color:  #e2c2b3;
     overflow: hidden;
     margin: 0;
     padding: 0;
 }
 
-.nav a {
+.nav a 
+{
     float: left;
     color: #403234;
     text-align: center;
@@ -33,12 +38,14 @@ p{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.nav a:hover{
+.nav a:hover
+{
     background-color: #b59196;
     color: black;
 }
 
-.nav a.active{
+.nav a.active
+{
     background-color: #665154;
     color: white;
 }

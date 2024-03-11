@@ -6,9 +6,9 @@
         <title>Sign Up Page</title>
         <link rel = "stylesheet" href ="/css/master.css">
         <link rel = "stylesheet" href ="/css/styles.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
               rel="stylesheet" 
-              integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+              integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
               crossorigin="anonymous">
         <style>
             body 
@@ -42,12 +42,24 @@
             input
             {
                 width: 425px;
-                padding: 5px;
             }
 
             button
             {
                 margin: 10px 50px;
+            }
+
+            br
+            {
+                display: block;
+                content: "";
+                margin: 8px;
+            }
+
+            .form-control
+            {
+                border-radius: 1;
+                border: 1px solid black;
             }
 
             .btnCenter
@@ -57,6 +69,7 @@
                 justify-content: center;
             }
 
+            /* For responsiveness */
             @media screen and (max-width: 465px)
             {
                 input
@@ -65,9 +78,9 @@
                 }
 
                 button
-            {
-                margin: 10px 40px;
-            }
+                {
+                    margin: 10px 40px;
+                }
             }
 
             @media screen and (max-width: 400px)
@@ -78,9 +91,9 @@
                 }
 
                 button
-            {
-                margin: 10px 30px;
-            }
+                {
+                    margin: 10px 30px;
+                }
             }
 
             @media screen and (max-width: 325px)
@@ -91,9 +104,9 @@
                 }
 
                 button
-            {
-                margin: 10px 20px;
-            }
+                {
+                    margin: 10px 20px;
+                }
             }
 
             @media screen and (max-width: 275px)
@@ -134,6 +147,7 @@
         </style>
     </head>
     <body>
+        <!-- Navigation Bar -->
         <div class = "nav">
             <a href="./index.html">Home</a>
             <a href = "./login.html">Log in</a> 
@@ -141,19 +155,56 @@
             <a href ="./groupcalendar.html">Group Calendar</a> 
             <a href="./individual_Calender.html">Individual Calendar</a>
         </div>
-
-        <div class="glassy_signup">
-            <h2 style="color: #F7f3f5;">Sign Up</h2> 
-            <h4 style= "color: #f7f3f5"> Fill out the form below to create an acoount.</h4>
+        <h1>Sign Up Page</h1>
+        <p>Please  fill in the following fields to create an account.</p>
+        <hr>
+        <!-- This form is centered on the page and has floating placeholder / label values -->
+        <div class="container d-flex justify-content-center">
             <form id="signup" method="post">
-                <input type="text" placeholder="First Name" id="fname" name="fname" required><br><br>
-                <input type="text" placeholder="Last Name" id="lname" name="lname" required><br><br>
-                <input type="tel" placeholder="Phone Number" id="phone" name="phone"><br><br>
-                <input type="text" placeholder="Address" id="addr" name="addr"><br><br>
-                <input type="email" placeholder="Email" id="email" name="email"><br><br>
-                <input type="text" placeholder="Username" id="userID" name="userID" required><br><br>
-                <input type="password" placeholder="Password" id="pwd" name="pwd" required><br><br>
-                <input type="password" placeholder="Confirm Password" id="cpwd" name="cpwd" required><br><br>
+                <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="First name" id="fname" name="fname" required><br>
+                    <label for="fname">First name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="Middle initial (opt.)" id="mname" name="mname" maxlength="1"><br>
+                    <label for="mname">Middle initial (opt.)</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="Last name" id="lname" name="lname" required><br>
+                    <label for="lname">Last name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="Suffix (opt.)" id="suf" name="suf" maxlength="6"><br>
+                    <label for="suf">Suffix (opt.)</label>
+                </div>
+                <div class="form-floating">
+                    <input type="date" class="form-control" id="dob" name="dob" required><br>
+                    <label for="dob">Date of birth</label>
+                </div>
+                <div class="form-floating">
+                    <input type="tel" class="form-control" placeholder="Phone number (Format: 123-456-7890)" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+                    <label for="phone">Phone number (Format: 123-456-7890)</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="Address" id="addr" name="addr" required><br>
+                    <label for="addr">Address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" class="form-control" placeholder="Email" id="email" name="email" required><br>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="Username" id="userID" name="userID" required><br>
+                    <label for="userID">Username</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" placeholder="Password" id="pwd" name="pwd" required><br>
+                    <label for="pwd">Password</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" placeholder="Confirm password" id="cpwd" name="cpwd" required><br>
+                    <label for="cpwd">Confirm Password</label>
+                </div>
     
                 <div class="btnCenter">
                     <button type="reset" class="btn btn-secondary">Cancel</button>
@@ -162,15 +213,24 @@
             </form>
         </div>
 
-        <script>
+        <!-- JavaScript for collecting the form values and converting it to a JSON string object -->
+        <script type="text/javascript">
             document.getElementById('signup').addEventListener('submit', function(event)
             {
                 // Prevent the signup button from submitting normally to an action file
                 event.preventDefault();
 
+                function checkPWD(pwd, cpwd)
+                {
+                    return pwd === cpwd;
+                }
+
                 // Get form values
                 const fname = document.getElementById('fname').value;
+                const mname = document.getElementById('mname').value;
                 const lname = document.getElementById('lname').value;
+                const suf = document.getElementById('suf').value;
+                const dob = document.getElementById('dob').value;
                 const phone = document.getElementById('phone').value;
                 const addr = document.getElementById('addr').value;
                 const email = document.getElementById('email').value;
@@ -178,11 +238,21 @@
                 const pwd = document.getElementById('pwd').value;
                 const cpwd = document.getElementById('cpwd').value;
 
+                // If both passwords do not match, stop further execution of this script
+                if (!checkPWD(pwd, cpwd))
+                {
+                    alert("Passwords do not match!");
+                    return;
+                }
+
                 // JSON object
                 const signupData = 
                 {
                     FIRST_NAME: fname,
+                    MIDDLE_INIT: mname,
                     LAST_NAME: lname,
+                    SUFFIX: suf,
+                    DOB: dob,
                     PHONE_NUMBER: phone,
                     ADDRESS: addr,
                     EMAIL: email,
@@ -190,13 +260,13 @@
                     PASSWORD: pwd
                 };
 
-                // Display JSON object in the console and can be sent to the server
+                // Display JSON object as a string in the console and can be sent to the server
                 console.log(JSON.stringify(signupData));
             });
         </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
                 crossorigin="anonymous">
         </script>
     </body>

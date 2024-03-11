@@ -91,4 +91,26 @@
                 crossorigin="anonymous">
         </script>
     </body>
+<script>
+    document.getElementById('signup').addEventListener('submit', function(event)
+    {
+        // Prevent the signup button from submitting normally to an action file
+        event.preventDefault();
+
+        // Get form values
+        const userID = document.getElementById('userID').value;
+        const pwd = document.getElementById('pwd').value;
+
+        // JSON object
+        const loginData = 
+        {
+            USER_NAME: userID,
+            PASSWORD: pwd
+        };
+
+        // Display JSON object in the console and can be sent to the server
+        console.log(JSON.stringify(loginData));
+    });
+</script>
+</body>
 </html>

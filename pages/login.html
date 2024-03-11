@@ -53,12 +53,35 @@
 
 <div class="form">
     <h2 style="color: #F7f3f5;">Login</h2> 
-    <form method="post" action="./backend/login.php">
-        <input type="text" name="username" placeholder="Username" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
+    <form id="login" method="post" action="./backend/login.php">
+        <input type="text" id="username" name="username" placeholder="Username" required><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
         <input type="submit" value="Login" class="button"> 
     </form>
 </div>
+
+<!-- JavaScript for collecting the form values and converting it to a JSON string object -->
+<script type="text/javascript">
+    document.getElementById('login').addEventListener('submit', function(event)
+    {
+        // Prevent the signup button from submitting normally to an action file
+        event.preventDefault();
+
+        // Get form values
+        const user = document.getElementById('username').value;
+        const pwd = document.getElementById('password').value;
+
+        // JSON object
+        const loginData = 
+        {
+            USER_NAME: user,
+            PASSWORD: pwd
+        };
+
+        // Display JSON object as a string in the console and can be sent to the server
+        console.log(JSON.stringify(loginData));
+    });
+</script>
 
 </body>
 </html>

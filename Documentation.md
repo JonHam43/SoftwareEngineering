@@ -1,8 +1,10 @@
 This repository was created on January 26, 2024 with an initial README.md file with the title SoftwareEngineering saved in it.  
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <br>
 
 Then on February 7, 2024, the index.html file was created by Jon Hamlin which has the skeleton code of an html document using the charset “utf-8,” the responsive meta tag: 
 "meta name="viewport" content="width=device-width, initial-scale=1", and the title of this page, which is Home.  
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <br>
 
 On February 23, 2024, we all created 5 basic web pages for our calendar scheduling system:  
@@ -17,6 +19,7 @@ The sign up page has a place for new users to enter in the necessary information
 The group calendar schedule page has a place for a user to enter in their name, appointment date and time, appointment description, and a button to press that will eventually send a JSON request to the database.  
 
 The individual calendar schedule page has the same places for a user to enter in their information as the group calendar schedule page along with the button that will eventually send a JSON request to the database.  
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <br>
 
 On March 8th, we updated our web pages to include Bootstrap 5 for our CSS and added some common themes shared between all pages.  

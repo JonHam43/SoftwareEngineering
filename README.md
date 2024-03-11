@@ -5,5 +5,3 @@ This is where we store the html documents written for the project, these are our
 This is where the stock images for the pages are stored.  
 ## CSS
 This is where we store the CSS files that determine the look of our webpages  
-## Backend
-This is where we store the JavaScript and PHP files

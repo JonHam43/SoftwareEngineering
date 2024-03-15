@@ -21,60 +21,100 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
-      </style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table, th, td {
+                border: 1px solid white;
+            }
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+            th {
+                background-color: #8b5d2e;
+            }
+        </style>
     </head>
     <body>
         <div class = "nav">
-        <a href="./index.html">Home</a>
-        <a href = "./login.html">Log in</a> 
-        <a href ="./signup.html">Sign up</a> 
-        <a class="active" href ="./groupcalendar.html">Group Calendar</a> 
-        <a href="./individual_Calender.html">Individual Calendar</a>
+            <a href="/index.html">Home</a>
+            <a href="./login.html">Log in</a> 
+            <a href="./signup.html">Sign up</a> 
+            <a class="active" href="./groupcalendar.html">Group Calendar</a> 
+            <a href="./individual_Calender.html">Individual Calendar</a>
         </div>
       
         <!--var authorized will allow this page to be seen if true-->
-        <h1> Admin must be logged in to view this page first</h1>
-            <p>Authorized users can view the available appts and add appts</p>
-        <div class="calendar" id="calendar"></div>
+        <h1>Admin must be logged in to view this page first</h1>
+        <p>Authorized users can view the available appts and add appts</p>
+      
+        
         <form id="addAppointmentForm">
-          <fieldset>
-              <label for="customerName">Customer Name</label>
-              <input type="text" name ="customerName" id="customerName" required><br><br>
-              <label for="appointmentDate">Appointment Date:</label>
-              <input type="date" name="appointmentDate" id="appointmentDate" required><br><br>
-              <label for="appointmentTime">Appointment Time:</label>
-              <input type="time" name="appointmentTime" id="appointmentTime" required><br><br>
-              <label for="appointmentDescription">Appointment Description:</label>
-              <input type="text" name="appointmentDescription" id="appointmentDescription" required><br><br>
-              <button type="submit">Add Appointment</button>
-          </fieldset>
+            <fieldset>
+                <label for="customerName">Customer Name</label>
+                <input type="text" name="customerName" id="customerName" required><br><br>
+                <label for="appointmentDate">Appointment Date:</label>
+                <input type="date" name="appointmentDate" id="appointmentDate" required><br><br>
+                <label for="appointmentTime">Appointment Time:</label>
+                <input type="time" name="appointmentTime" id="appointmentTime" required><br><br>
+                <label for="appointmentDescription">Appointment Description:</label>
+                <input type="text" name="appointmentDescription" id="appointmentDescription" required><br><br>
+                <button type="submit">Add Appointment</button>
+            </fieldset>
         </form>
 
         <h3>Calendar with Appointments goes here!</h3>
+        <table id="userTable">
+          <!-- Table content will be dynamically populated here -->
+        </table>
         <script>
-          document.getElementById('addAppointmentForm').addEventListener('submit', function(event)
-          {
+                        // Dummy users data for demonstration
+                        const users = [
+                { username: 'johnd', password: 'pass12', isAdmin: 'Yes' },
+                { username: 'ghandi', password: 'pass4rd', isAdmin: 'No' }
+            ];
             
-            event.preventDefault();
-            const customerName = document.getElementById('customerName').value;
-            const appointmentDate = document.getElementById('appointmentDate').value;
-            const appointmentTime = document.getElementById('appointmentTime').value;
-            const appointmentDescription = document.getElementById('appointmentDescription').value;
+            const userTable = document.getElementById('userTable');
+            
+            // Function to populate the table with users data
+            function populateUserTable() {
+                let tableContent = '<tr><th>ID</th><th>Name</th><th>Email</th></tr>';
+                
+                users.forEach(user => {
+                    tableContent += `<tr><td>${user.username}</td><td>${user.password}</td><td>${user.isAdmin}</td></tr>`;
+                });
+                
+                userTable.innerHTML = tableContent;
+            }
+            
+            populateUserTable();
+
+
                     
-            const appointmentData = 
-            {
-                customerName: customerName,
-                appointmentDate: appointmentDate,
-                appointmentTime: appointmentTime,
-                appointmentDescription: appointmentDescription,
-            };
-            console.log(JSON.stringify(appointmentData));
-          });
+            
+                document.getElementById('addAppointmentForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const customerName = document.getElementById('customerName').value;
+                const appointmentDate = document.getElementById('appointmentDate').value;
+                const appointmentTime = document.getElementById('appointmentTime').value;
+                const appointmentDescription = document.getElementById('appointmentDescription').value;
+                
+                const appointmentData = {
+                    customerName: customerName,
+                    appointmentDate: appointmentDate,
+                    appointmentTime: appointmentTime,
+                    appointmentDescription: appointmentDescription,
+                };
+                console.log(JSON.stringify(appointmentData));
+            });
         </script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
-        crossorigin="anonymous">
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+                crossorigin="anonymous">
         </script>
     </body>
 </html>

@@ -7,7 +7,7 @@ Then on February 7, 2024, the index.html file was created by Jon Hamlin which ha
 <hr> <br>
 
 
-On February 23, 2024, we all created 5 basic web pages for our calendar scheduling system: 
+On February 23, 2024, we all created 5 basic web pages for our calendar scheduling system:  
 &ensp; &ensp; &ensp; &ensp; Main/Home Page (index), Log in Page, Sign up page, Group Calendar page, and Individual Calendar Page 
 
 

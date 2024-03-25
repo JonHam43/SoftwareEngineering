@@ -35,6 +35,18 @@
             th {
                 background-color: #8b5d2e;
             }
+            .form-box {
+                background-color: #e2c2b3;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Override text color to match background */
+            .form-label,
+            .form-control {
+                color: #403234;
+            }
         </style>
     </head>
     <body>
@@ -50,21 +62,31 @@
         <h1>Admin must be logged in to view this page first</h1>
         <p>Authorized users can view the available appts and add appts</p>
       
+        <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-6 form-box"> 
+                  <h5 class="text-center mb-4" style="color: #403234;">Add Appointment </h5>
+                  <h6 class="text-center mb-4" style="color: #403234;"> Please fill out entire form to add an appointment </h6>
+                  <form id="addAppointmentForm">
+                    <fieldset>
+                      <label for="customerName" style="color:black">Customer Name:</label>
+                      <input type="text" name="customerName" id="customerName" required><br><br>
+                      <label for="appointmentDate" style="color:black">Appointment Date:</label>
+                      <input type="date" name="appointmentDate" id="appointmentDate" required><br><br>
+                      <label for="appointmentTime" style="color:black">Appointment Time:</label>
+                      <input type="time" name="appointmentTime" id="appointmentTime" required><br><br>
+                      <label for="appointmentDescription" style="color:black">Appointment Description:</label>
+                      <input type="text" name="appointmentDescription" id="appointmentDescription" required><br><br>
+                      <button type="submit">Add Appointment</button>
+                    </fieldset>
+                  </form>
+                  <div id="resultContainer"></div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <hr class="border-bottom border-2" style="border-color: #e2c2b3;">
         
-        <form id="addAppointmentForm">
-            <fieldset>
-                <label for="customerName">Customer Name</label>
-                <input type="text" name="customerName" id="customerName" required><br><br>
-                <label for="appointmentDate">Appointment Date:</label>
-                <input type="date" name="appointmentDate" id="appointmentDate" required><br><br>
-                <label for="appointmentTime">Appointment Time:</label>
-                <input type="time" name="appointmentTime" id="appointmentTime" required><br><br>
-                <label for="appointmentDescription">Appointment Description:</label>
-                <input type="text" name="appointmentDescription" id="appointmentDescription" required><br><br>
-                <button type="submit">Add Appointment</button>
-            </fieldset>
-        </form>
-
         <h3>Calendar with Appointments goes here!</h3>
         <table id="userTable">
           <!-- Table content will be dynamically populated here -->

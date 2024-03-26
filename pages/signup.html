@@ -309,7 +309,7 @@
             {
                 // Removes non-numeric characters
                 var phone = event.target.value.replace(/\D/g, '').substring(0, 10);
-                // Formats phone number as (123) 456-7890
+                // Formats phone number as 123-456-7890
                 var formatPhone = phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
                 event.target.value = formatPhone;
             });

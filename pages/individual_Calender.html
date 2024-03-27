@@ -75,8 +75,31 @@
 
                 <div class="mb-3">
                     <label for="appointment" class="form-label">Appointment Time:</label>
-                    <input type="time" id="time" name="time" class="form-control" step="900">
+                    <div class = "hrsmins">
+                    <select id="hours" name="hours" class="form-control"></select>
+                    <select id="minutes" name="minutes" class="form-control"></select>
+                    </div>
                 </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    function createOption(value, text) {
+                        var option = document.createElement('option');
+                        option.text = text;
+                        option.value = value;
+                        return option;
+                    }
+
+                    var hourSelect = document.getElementById('hours');
+                    for (var i = 8; i <= 18; i++) {
+                        hourSelect.add(createOption(i, i));
+                    }
+
+                    var minutesSelect = document.getElementById('minutes');
+                    for (var i = 0; i < 60; i += 15) {
+                        minutesSelect.add(createOption(i, i));
+                    }
+                });
+                </script>
 
                 <div class="mb-3">
                     <label for="description" class="form-label">Appointment Description:</label>
@@ -134,5 +157,17 @@
         crossorigin="anonymous"></script>
 </script>
 <script src="path/to/my/script.js"></script>
+<style>
+    /* Style for small select elements displayed next to each other */
+    select {
+        width: 80px;
+        padding: 0.5rem;
+    }
+
+    .hrsmins {
+        display: flex;
+        align-items: center;
+    }
+</style>
 </body>
 </html>

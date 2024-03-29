@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Individual Calender Schedule Page</title>
-        <link rel = "stylesheet" href ="/css/master.css">
+        <link rel = "stylesheet" href ="../css/master.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
               rel="stylesheet" 
               integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
@@ -55,7 +55,7 @@
     </head>
     <body>
         <div class = "nav">
-        <a href="/index.html">Home</a>
+        <a href="../index.html">Home</a>
         <a href= "./login.html">Log in</a> 
         <a href="./signup.html">Sign up</a> 
         <a href="./groupcalendar.html">Group Calendar</a> 
@@ -90,40 +90,29 @@
                             <input type="date" id="date" name="date" class="form-control">
                         </div>
 
-                        <div class="mb-3">
-                            <label for="appointment" class="form-label">Appointment Time:</label>
-                            <input type="time" id="time" name="time" class="form-control">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Service Selection:</label>
-                            <select class="form-select" id="description" name="description" onchange="showAdditionalSection()">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3" id="additionalSection" style="display: none;">
-                            <label for="additionalSelect" class="form-label">Additional Service Selection (if needed):</label>
-                            <select class="form-select" id="additionalSelect" name="additionalSelect">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-
-                        <br>
-                        <button type="button" onclick="sendData()" class="btn btn-light">Add Appointment</button>
-                        <br>
-                        <br>
-                    </form>
-                    <div id="resultContainer"></div>
+                <div class="mb-3">
+                    <label for="appointment" class="form-label">Appointment Time:</label>
+                    <input type="time" id="time" name="time" class="form-control">
                 </div>
-            </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Appointment Description:</label>
+                    <select class="form-select" id="description" name="description">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <br>
+                <button type="button" onclick="sendData()" class="btn btn-light">Add Appointment</button>
+            <br>
+            <br>
+            </form>
+            <div id="resultContainer"></div>
         </div>
+    </div>
+</div>
 
         <br>
         <hr class="border-bottom border-2" style="border-color: #e2c2b3;">
@@ -171,7 +160,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous">
-    </script>
-    </body>
+</script>
+</body>
 </html>
 

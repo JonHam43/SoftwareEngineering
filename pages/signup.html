@@ -219,13 +219,13 @@
                     <label style="color: #e2c2b3">Contact Information*</label>
                     <div class="col-sm">
                         <div class="form-floating">
-                            <input type="tel" class="form-control" placeholder="Phone Number*" id="phone" name="phone" required>
+                            <input type="tel" class="form-control" placeholder="Phone Number*" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phone" name="phone" required>
                             <label for="phone">Phone Number*</label>
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-floating">
-                            <input type="email" class="form-control" placeholder="Email*" id="email" name="email" required>
+                            <input type="email" class="form-control" placeholder="Email*" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}(?:\.[a-zA-Z]{2,})?" id="email" name="email" required>
                             <label for="email">Email*</label>
                         </div>
                     </div>
@@ -251,7 +251,7 @@
                     </div>
                     <div class="col-sm">
                         <div class="form-floating">
-                            <input type="text" class="form-control" placeholder="Zip" id="zip" name="zip" maxlength="5">
+                            <input type="number" class="form-control" placeholder="Zip" id="zip" name="zip" maxlength="5">
                             <label for="zip">Zip</label>
                         </div>
                     </div>
@@ -493,24 +493,18 @@
                         return pwd === cpwd;
                     }
 
-                    function validateEmail(e)
-                    {
-                        const r = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        return r.test(e);
-                    }
-
                     // Get form values
-                    const fname = document.getElementById('fname').value;
-                    const mname = document.getElementById('mname').value;
-                    const lname = document.getElementById('lname').value;
-                    const suf = document.getElementById('suf').value;
+                    const fname = document.getElementById('fname').value.toUpperCase();
+                    const mname = document.getElementById('mname').value.toUpperCase();
+                    const lname = document.getElementById('lname').value.toUpperCase();
+                    const suf = document.getElementById('suf').value.toUpperCase();
                     const phone = document.getElementById('phone').value;
-                    const addr = document.getElementById('addr').value;
-                    const city = document.getElementById('city').value;
+                    const addr = document.getElementById('addr').value.toUpperCase();
+                    const city = document.getElementById('city').value.toUpperCase();
                     let state = document.getElementById('state').value;
                     const zip = document.getElementById('zip').value;
-                    const email = document.getElementById('email').value;
-                    const userID = document.getElementById('userID').value;
+                    const email = document.getElementById('email').value.toUpperCase();
+                    const userID = document.getElementById('userID').value.toUpperCase();
                     const pwd = document.getElementById('pwd').value;
                     const cpwd = document.getElementById('cpwd').value;
 
@@ -519,7 +513,8 @@
                     const year = document.getElementById('year').value;
                     const dob = month + "/" + day + "/" + year;
 
-                    if (state === "Select State")
+                    // Prevent the default value for the State dropdown menu from being "State"
+                    if (state === "State")
                     {
                         state = "";
                     }
@@ -528,14 +523,6 @@
                     if (!checkPWD(pwd, cpwd))
                     {
                         alert("Passwords do not match!");
-                        event.preventDefault();
-                    }
-
-                    // If the email does not contain both an "@" and a "." with characters before and after them,
-                    // stop further execution of this script
-                    if (!validateEmail(email))
-                    {
-                        alert("Invalid Email Address");
                         event.preventDefault();
                     }
 

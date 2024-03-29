@@ -71,7 +71,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 form-box text-center"> 
-                    <h5 class="text-center mb-4" style="color: #403234;">Add Appointment </h5>
+                    <h5 class="text-center mb-4" style="color: #403234;">Appointment Form </h5>
                     <h6 class="text-center mb-4" style="color: #403234;"> Please fill out entire form to add an appointment </h6>
                     <hr style="border-top: 1px solid #403234; margin: 20px 0;">
                     <form id="appointmentForm" action="#">
@@ -96,8 +96,18 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="description" class="form-label">Appointment Description:</label>
-                    <select class="form-select" id="description" name="description">
+                    <label for="description" class="form-label">Service Selection :</label>
+                    <select class="form-select" id="description" name="description" onchange="showAdditionalSection()">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <div class="mb-3" id="additionalSection" style="display: none;">
+                    <label for="additionalSelect" class="form-label">Additional Service Selection (if needed):</label>
+                    <select class="form-select" id="additionalSelect" name="additionalSelect">
                         <option selected>Choose...</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>

@@ -135,7 +135,7 @@
       
               const appointmentData = {
                   
-                title: customerName + ' - ' + appointmentDescription,
+                title: customerName + ' - \n' + appointmentDescription,
                 start: appointmentDate + 'T' + appointmentTime,
                 editable: true
               };
@@ -147,13 +147,20 @@
       
           document.addEventListener('DOMContentLoaded', function() {
               var calendarEl = document.getElementById('calendar');
+              var currentDate = new Date().toISOString().slice(0, 10);
               calendar = new FullCalendar.Calendar(calendarEl, {
                   initialView: 'dayGridMonth',
-                  initialDate: '2024-03-07',
+                  initialDate: currentDate,
                   headerToolbar: {
                       left: 'prev,next today',
                       center: 'title',
                       right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                  },
+                  businessHours: {
+                        
+                        weekDays: [1, 2, 3, 4, 5], // Monday - Friday days of operation
+                        startTime: '08:00', 
+                        endTime: '18:00' 
                   },
                   events: [
                       {
@@ -202,7 +209,18 @@
                           url: 'https://google.com/',
                           start: '2024-03-28'
                       }
-                  ]
+                  ],
+                  eventDisplay: 'block', // Render events as blocks
+                  eventContent: function(arg) {
+                    const eventTitle = document.createElement('div');
+                    const eventTime = document.createElement('div');
+                    eventTitle.innerText = arg.event.title;
+                    eventTime.innerText = arg.event.start.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                    const container = document.createElement('div');
+                    container.appendChild(eventTitle);
+                    container.appendChild(eventTime);
+                    return { domNodes: [container] };
+                  }
               });
               calendar.render();
           });

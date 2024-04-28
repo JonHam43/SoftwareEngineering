@@ -401,12 +401,14 @@
 
         // _________________________________________________________________________________________________________________________
 
-                // Populate the Year dropdown menu with years ranging from 1900 - Today
+                // Populate the Year dropdown menu with years ranging from 1902 - Today
+                // This will change every year as the oldest person to ever live was 122 years old
                 let yearDrop = document.getElementById('year');
                 let curYear = new Date().getFullYear();
+                let startYear = curYear - 122;
 
                 // Create option elements where both the displayed text and value are the year
-                for (let y=1907; y<=curYear; y++)
+                for (let y=startYear; y<=curYear; y++)
                 {
                     let opt = document.createElement("option");
                     opt.text = y;

@@ -1,3 +1,4 @@
+var calendar;
 !function() {
 
     var today = moment();
@@ -55,7 +56,8 @@
       var self = this;
       
       this.events.forEach(function(ev) {
-       ev.date = self.current.clone().date(Math.random() * (29 - 1) + 1);
+        // Assigning specific dates to events
+        ev.date = moment(ev.date);
       });
       
       
@@ -160,6 +162,7 @@
         }, []);
   
         todaysEvents.forEach(function(ev) {
+          // Changed here to use the specific date of the event
           var evSpan = createElement('span', ev.color);
           element.appendChild(evSpan);
         });
@@ -305,32 +308,79 @@
       this.draw();
     }
   
-    window.Calendar = Calendar;
-  
     function createElement(tagName, className, innerText) {
       var ele = document.createElement(tagName);
       if(className) {
         ele.className = className;
       }
       if(innerText) {
-        ele.innderText = ele.textContent = innerText;
+        ele.innertext = ele.textContent = innerText;
       }
       return ele;
     }
-  }();
   
-  !function() {
-    var data = [
-        
-     
-    ];
-  
-    
-  
-    function addDate(ev) {
-      
+    function CalendarApp() {
     }
+    /*function addEventsFromJSON(jsonString) {
+      var newEvents = JSON.parse(jsonString);
+      // Assuming newEvents is an array of event objects
+      data = data.concat(newEvents); // Add new events to existing data array
+      calendar.draw(); // Redraw the calendar with updated data
+    }
+    */
   
-    var calendar = new Calendar('#calendar', data);
+    CalendarApp.prototype.init = function() {
+      var data = [
+        /*
+        { eventName: 'Lunch Meeting w/ Mark', calendar: 'Work', date: '2024-04-15' },
+        { eventName: 'Interview - Jr. Web Developer', calendar: 'Work',  date: '2024-04-18' },
+        { eventName: 'Demo New App to the Board', calendar: 'Work',  date: '2024-04-25' },
+        { eventName: 'Dinner w/ Friends', calendar: 'Personal',  date: '2024-04-30' },
+        { eventName: 'Birthday Party', calendar: 'Personal',  date: '2024-04-29' }
+      */
+      ];
+      calendar = new Calendar('#calendar', data); // Assign calendar object globally
+     /* var calendar = new Calendar('#calendar', data); */
   
+      // Add event listener to the addEventBtn
+      document.getElementById('addEventBtn').addEventListener('click', function() {
+        var firstname = document.getElementById('firstname').value;
+        var lastname = document.getElementById('lastname').value;
+        var description = document.getElementById('description').value;
+        var date = moment(document.getElementById('date').value).format('YYYY-MM-DD'); // Format date as string
+        var time = document.getElementById('time').value.toString();
+        var additionalSelect = document.getElementById('additionalSelect').value;
+    
+        console.log("First Name:", firstname);
+        console.log("Last Name:", lastname);
+        console.log("Description:", description);
+        console.log("Date:", date);
+        console.log("Time:", time);
+        console.log("Additional Select:", additionalSelect);
+    
+        if (firstname.trim() !== '' && lastname.trim() !== '' && date !== '') {
+            console.log("Form is valid. Adding event to calendar.");
+            var eventName = firstname + ' ' + lastname + ' at ' + time + ' for ' + description + ' and ' + additionalSelect;
+            console.log("Event Name:", eventName);
+            var newEvent = {
+                eventName: eventName,
+                calendar: description,
+                date: date
+            };
+            console.log("New Event:", newEvent);
+            data.push(newEvent);
+            calendar.draw();
+        } else {
+            console.log("Form is not valid. Please fill out all required fields.");
+        }
+    });
+    
+    
+    };
+  
+    window.onload = function() {
+      var app = new CalendarApp();
+      app.init();
+    };
   }();
+  

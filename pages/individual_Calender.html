@@ -95,39 +95,40 @@
                     <div class="mb-3">
                         <label for="CustomeLastName" class="form-label">Customer Last Name:</label>
                         <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" name="lastname">
-                    </div>
-
+                    </div>   
+                    
                     <div class="mb-3">
                         <label for="AppointmentDate" class="form-label">Appointment Date:</label>
-                        <input type="date" id="date" name="date" class="form-control">
+                        <input type="date" class="form-control" id="date" name="date" >
                     </div>
-
+                       
                     <div class="mb-3">
                         <label for="appointment" class="form-label">Appointment Time:</label>
-                        <input type="time" id="time" name="time" class="form-control">
+                        <input type="time" class="form-control" id="time" name="time">
                     </div>
-
+                    
                     <div class="mb-3">
                         <label for="description" class="form-label">Service Selection :</label>
-                        <select class="form-select" id="description" name="description" onchange="showAdditionalSection()">
+                        <select id="description" class="form-control" name="description" onchange="showAdditionalSection()">
                             <option selected>Choose...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
-                    </div>
-
+                    </div>    
+                        
                     <div class="mb-3" id="additionalSection" style="display: none;">
                         <label for="additionalSelect" class="form-label">Additional Service Selection (if needed):</label>
-                        <select class="form-select" id="additionalSelect" name="additionalSelect">
+                        <select id="additionalSelect" class="form-control" name="additionalSelect">
                             <option selected>Choose...</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
                         </select>
-                    </div>
+                    </div>    
+                    
                     <br>
-                    <button type="button" onclick="sendData()" class="btn btn-light">Add Appointment</button>
+                    <button type="button" id="addEventBtn" onclick="sendData()" class="btn btn-light">Add Appointment</button>
                     <br>
                     <br>
                 </form>
@@ -149,7 +150,7 @@
    <!-- Link to JavaScript file -->
    <script src="incaljs.js"></script>
     <script>
-        function sendData() {
+function sendData() {
             const form = document.getElementById('appointmentForm');
             //create new FormData obj
             const formData = new FormData(form);
@@ -169,11 +170,15 @@
             },
             //convert jsonObj to JSON string and send as body
             body: JSON.stringify(jsonObject),
-            })
+            });
+        
             // Display the JSON object on the page for testing  purposes
             const resultContainer = document.getElementById('resultContainer');
             resultContainer.innerText = JSON.stringify(jsonObject, null, 2);
-        }
+
+            
+
+            }
 
         function showAdditionalSection() {
             var selectBox = document.getElementById("description");

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <script>
+// Function to send a GET request to retrieve init.sql contents and log of changes
+function getData() {
+    // Use the Fetch API to send the request to a specific endpoint on the server
+    fetch('localhost')
+        .then(response => response.json())  // Convert the response data to JSON
+        .then(data => {
+            // Display the contents of init.sql
+            document.getElementById('initSqlContent').textContent = data.initSqlContent;
+
+            // Display the log of changes
+            const changeLogList = document.getElementById('changeLog');
+            changeLogList.innerHTML = '';  // Clear the existing list
+            data.changeLog.forEach(change => {
+                const listItem = document.createElement('li');
+                listItem.textContent = change;
+                changeLogList.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+    </script>
+</head>
+<body>
+    <h1>Admin Page</h1>
+    <button onclick="getData()">Get Data</button>
+    <pre id="data"></pre>
+
+    <h2>Contents of init.sql</h2>
+    <pre id="initSqlContent"></pre>
+
+    <h2>Log of Changes to init.sql</h2>
+    <ul id="changeLog"></ul>
+</body>
+</html>

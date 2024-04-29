@@ -21,20 +21,6 @@ class Communication extends Thread
   private final long SLEEP_TIMER = 500;
   private Connection conn;
 
-  private String  exampleResult="{\n"+
-  "  \"SUFFIX\": \"null\",\n" +
-  "  \"PASSWORD\": \"PASSCODE1\",\n"+
-  "  \"DOB\": \"1/23/1777\",\n"+
-  "  \"ADDRESS\": \"100 WORKISHOME CT.,WORK,GA 10011\",\n"+
-  "  \"AUTHORIZATION_LEVEL\": \"WORKER\",\n"+
-  "  \"USER_NAME\": \"617000009\",\n"+
-  "  \"EMAIL\": \"617000009@example.com\",\n"+
-  "  \"PHONE_NUMBER\": \"721-111-2222\",\n"+
-  "  \"NAME\": \"WORK ERMAN\"\n"+
-"}";
-
-//all other results may return 200 ok, 404 not found or 400 bad request
-
   protected Communication(Socket clientSocket, int identifier,Connection conn)
   {
     this.clientSocket = clientSocket;
@@ -91,10 +77,10 @@ class Communication extends Thread
           char c =loader.charAt((0));
           result = switch(c)
           {
-            case '1' -> exampleResult;
-            case '2' -> "You have made it to put";
-            case '3' -> "You have made it to post";
-            case '4' -> "You have made it to delete";
+            case '1' -> new Get(conn).handleApi(loader, userInput);
+            case '2' -> new Put(conn).handleApi(loader, userInput);
+            case '3' -> new Post(conn).handleApi(loader, userInput);
+            case '4' -> new Delete(conn).handleApi(loader, userInput);
             default  -> "501 Not Implemented";
           };
           return !result.equals("{}") ? result : "400 Bad Request";

@@ -7,9 +7,9 @@
 		$db = "membership";
 
 		// $hn = "localhost";
-		// $un = "u386797014_phpUser1";
-		// $pwd = "DbUser!123?";
-		// $db = "u386797014_membership";
+		// $un = "u643483751_auth";
+		// $pwd = "adminUser12";
+		// $db = "u643483751_adminUser";
 
 		$connect = new mysqli($hn, $un, $pwd, $db);
 		if($connect->connect_error) die("Fatal Error");

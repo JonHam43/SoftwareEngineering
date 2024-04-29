@@ -166,7 +166,7 @@
         <div class="container d-flex justify-content-center glassy_signup">
             <h1>Sign up</h1>
             <p>Please fill in the following fields to create an account.</p>
-            <form id="signup" method="post">
+            <form id="signup" method="POST">
                 <!-- 1st Row: Name -->
                 <div class="row mb-1">
                     <label style="color: #e2c2b3">Your Name*</label>
@@ -548,6 +548,33 @@
 
                     // Display JSON object as a string in the console and can be sent to the server
                     console.log(JSON.stringify(signupData));
+
+                    const requestData = 
+                    {
+                        flag: 'signup',
+                        signupData: signupData
+                    };
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', '../test/mock-server.php', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.onload = function()
+                    {
+                        if (xhr.readyState == 4 && xhr.status == 200) 
+                        {
+                            const response = JSON.parse(xhr.responseText);
+                            console.log(response.message);
+                        }
+                        else
+                        {
+                            console.log("Error:", xhr.statusText);
+                        }
+                    };
+                    xhr.onerror = function()
+                    {
+                        console.error("Network Error");
+                    };
+                    xhr.send(JSON.stringify(requestData));
                 });
             });
         </script>

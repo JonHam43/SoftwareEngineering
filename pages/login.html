@@ -65,24 +65,57 @@
 
         <!-- JavaScript for collecting the form values and converting it to a JSON string object -->
         <script type="text/javascript">
-            document.getElementById('login').addEventListener('submit', function(event)
+            document.addEventListener("DOMContentLoaded", function() 
             {
-                // Prevent the signup button from submitting normally to an action file
-                event.preventDefault();
-
-                // Get form values
-                const user = document.getElementById('username').value;
-                const pwd = document.getElementById('password').value;
-
-                // JSON object
-                const loginData = 
+                document.getElementById('login').addEventListener('submit', function(event)
                 {
-                    USER_NAME: user,
-                    PASSWORD: pwd
-                };
+                    // Prevent the signup button from submitting normally to an action file
+                    event.preventDefault();
 
-                // Display JSON object as a string in the console and can be sent to the server
-                console.log(JSON.stringify(loginData));
+                    // Get form values
+                    const user = document.getElementById('username').value;
+                    const pwd = document.getElementById('password').value;
+
+                    // JSON object
+                    const loginData = 
+                    {
+                        USER_NAME: user,
+                        PASSWORD: pwd
+                    };
+
+                    // Display JSON object as a string in the console and can be sent to the server
+                    console.log(JSON.stringify(loginData));
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', '../test/login-response.php', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.onload = function() 
+                    {
+                        if (xhr.readyState == 4) 
+                        {
+                            if (xhr.status == 200) 
+                            {
+                                const response = JSON.parse(xhr.responseText);
+                                if (response && response.message) 
+                                {
+                                    console.log(response.message);
+                                } else 
+                                {
+                                    console.error("Invalid response format:", response);
+                                }
+                            } 
+                            else 
+                            {
+                                console.error("Error:", xhr.statusText);
+                            }
+                        }
+                    };
+                    xhr.onerror = function()
+                    {
+                        console.error("Network Error");
+                    };
+                    xhr.send(JSON.stringify(loginData));
+                });
             });
         </script>
 

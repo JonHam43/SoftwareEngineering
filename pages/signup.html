@@ -549,32 +549,35 @@
                     // Display JSON object as a string in the console and can be sent to the server
                     console.log(JSON.stringify(signupData));
 
-                    const requestData = 
-                    {
-                        flag: 'signup',
-                        signupData: signupData
-                    };
-
                     const xhr = new XMLHttpRequest();
-                    xhr.open('POST', '../test/mock-server.php', true);
+                    xhr.open('POST', '../test/signup-response.php', true);
                     xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.onload = function()
+                    xhr.onload = function() 
                     {
-                        if (xhr.readyState == 4 && xhr.status == 200) 
+                        if (xhr.readyState == 4) 
                         {
-                            const response = JSON.parse(xhr.responseText);
-                            console.log(response.message);
-                        }
-                        else
-                        {
-                            console.log("Error:", xhr.statusText);
+                            if (xhr.status == 200) 
+                            {
+                                const response = JSON.parse(xhr.responseText);
+                                if (response && response.message) 
+                                {
+                                    console.log(response.message);
+                                } else 
+                                {
+                                    console.error("Invalid response format:", response);
+                                }
+                            } 
+                            else 
+                            {
+                                console.error("Error:", xhr.statusText);
+                            }
                         }
                     };
                     xhr.onerror = function()
                     {
                         console.error("Network Error");
                     };
-                    xhr.send(JSON.stringify(requestData));
+                    xhr.send(JSON.stringify(signupData));
                 });
             });
         </script>
